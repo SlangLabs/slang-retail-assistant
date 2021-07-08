@@ -1,0 +1,15 @@
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "retailAssistant": {
+                "apiKey": "<?php /* @escapeNotVerified */ echo $block->getAPIKey(); ?>",
+                "assistantID": "<?php /* @escapeNotVerified */ echo $block->getAssistantID(); ?>",
+                "subdomain": "<?php /* @escapeNotVerified */ echo $block->getSubdomain(); ?>",
+                "languages": "<?php /* @escapeNotVerified */ echo $block->getLanguages(); ?>",
+                "baseUrl": "<?php /* @escapeNotVerified */ echo $block->getBaseUrl(); ?>",
+                "cartURL": "<?php /* @escapeNotVerified */ echo $block->getUrl('checkout/cart', ['_secure' => true]); ?>",
+                "checkoutURL": "<?php /* @escapeNotVerified */ echo $block->getUrl('checkout', ['_secure' => true]); ?>"
+            }
+        }
+    }
+</script>

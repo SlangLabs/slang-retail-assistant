@@ -1,0 +1,33 @@
+{
+    "name": "slanglabs/slang-retail-assistant",
+    "description": "A Magento 2 module that adds a voice assistant",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "keywords": [
+      "slanglabs",
+      "retail",
+      "voice",
+      "voice-assistant",
+      "voice-recognition",
+      "voice-commands",
+      "voice-control"
+    ],
+    "authors": [
+      {
+        "name": "Mohsin Mumtaz",
+        "email": "mohsin@slanglabs.in",
+        "role": "Developer"
+      }
+    ],
+    "homepage": "https://slanglabs.in",
+    "require": {
+      "php": ">=5.3.0",
+      "magento/framework": ">=100.0.0"
+    },
+    "autoload": {
+      "files": [ "registration.php" ],
+      "psr-4": {
+        "Slanglabs\\RetailAssistant\\": ""
+      }
+    }
+  }

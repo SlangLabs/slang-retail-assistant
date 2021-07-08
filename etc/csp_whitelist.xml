@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp/etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="connect-src">
+                <values>
+                    <value id="slanglabs" type="host">*.slanglabs.in</value>
+                    <value id="slanglabs_analytics" type="host">https://us-central1-slangserver.cloudfunctions.net</value>
+                    <value id="slanglabs_config" type="host">https://us-central1-slang-client-183202.cloudfunctions.net</value>
+                    <value id="slanglabs_asr" type="host">wss://*.slanglabs.in</value>
+                </values>
+        </policy>
+        <policy id="img-src">
+                <values>
+                    <value id="data" type="host">data:</value>
+                </values>
+        </policy>
+    </policies>
+</csp_whitelist>
