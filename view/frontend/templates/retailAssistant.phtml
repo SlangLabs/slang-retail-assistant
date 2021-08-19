@@ -5,7 +5,9 @@
                 "apiKey": "<?php /* @escapeNotVerified */ echo $block->getAPIKey(); ?>",
                 "assistantID": "<?php /* @escapeNotVerified */ echo $block->getAssistantID(); ?>",
                 "subdomain": "<?php /* @escapeNotVerified */ echo $block->getSubdomain(); ?>",
+                "env": "<?php /* @escapeNotVerified */ echo $block->getEnv(); ?>",
                 "languages": "<?php /* @escapeNotVerified */ echo $block->getLanguages(); ?>",
+                "category": <?php /* @escapeNotVerified */ echo json_encode($block->getEnableCategory()); ?>,
                 "baseUrl": "<?php /* @escapeNotVerified */ echo $block->getBaseUrl(); ?>",
                 "cartURL": "<?php /* @escapeNotVerified */ echo $block->getUrl('checkout/cart', ['_secure' => true]); ?>",
                 "checkoutURL": "<?php /* @escapeNotVerified */ echo $block->getUrl('checkout', ['_secure' => true]); ?>"

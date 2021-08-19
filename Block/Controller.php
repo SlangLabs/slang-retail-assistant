@@ -12,14 +12,16 @@ class Controller extends \Magento\Framework\View\Element\Template
      * @param SlangConfig $slangConfig
      * @param array $data
      */
-    protected $slangConfig;
+    protected $slangConfig, $collectionFactory;
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         SlangConfig $slangConfig,
+        \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $collectionFactory,
         array $data = []
     ) {
         $this->slangConfig = $slangConfig;
+        $this->collectionFactory = $collectionFactory;
         parent::__construct($context, $data);
     }
 
@@ -41,5 +43,29 @@ class Controller extends \Magento\Framework\View\Element\Template
     public function getLanguages()
     {
         return $this->slangConfig->getConfigValue('languages');
+    }
+
+    public function getEnv()
+    {
+        return $this->slangConfig->getConfigValue('env');
+    }
+
+    public function getEnableCategory()
+    {
+        $collection = $this->collectionFactory->create();
+        $collection->addAttributeToSelect('name');
+        $collection->addIsActiveFilter(true);
+        // $collection->addLevelFilter(2);
+        $arry = [];
+        foreach ($collection as $category) {
+            //TODO: Nested Subcategory selection.
+            // $subCat = [];
+            // $childCategory = $category->getChildrenCategories();
+            // foreach ($childCategory as $subCategory) {
+            //     $subCat[strtolower($subCategory->getName())] = $subCategory->getUrl();
+            // }
+            $arry[str_replace("&", "and", strtolower($category->getName()))] = $category->getUrl();
+        }
+        return $arry;
     }
 }

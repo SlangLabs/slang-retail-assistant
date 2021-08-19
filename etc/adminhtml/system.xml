@@ -19,12 +19,19 @@
                     <label>API key</label>
                     <validate>required-entry validate-length minimum-length-32 maximum-length-32</validate>
                 </field>
+                <field id="env" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enviroment</label>
+                    <comment>`staging` enviroment is used for TESTING. Publish the assistant to `production` before selecting `production` environment.</comment>
+                    <source_model>Slanglabs\RetailAssistant\Model\Source\TrainEnvDropDown</source_model>
+                </field>
                 <field id="subdomain" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Subdomain</label>
+                    <comment>Slang supports `grocery` and `pharmarcy`. If you sell different category products. Please select `custom` subdomain.</comment>
                     <source_model>Slanglabs\RetailAssistant\Model\Source\SubdomainDropDown</source_model>
                 </field>
                 <field id="languages" translate="label" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Add language to enable</label>
+                    <comment>You can select one or more languages.</comment>
                     <source_model>Slanglabs\RetailAssistant\Model\Source\MultiSelectLangCodes</source_model>
                 </field>
             </group>

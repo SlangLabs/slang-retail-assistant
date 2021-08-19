@@ -12,11 +12,7 @@ class MultiSelectLangCodes implements \Magento\Framework\Data\OptionSourceInterf
     public function toOptionArray()
     {
         return [
-            ['value' => "en-IN", 'label' => __('English(India)')],
-            ['value' => "en-US", 'label' => __('English(USA)')],
-            ['value' => "hi-IN", 'label' => __('HINDI')],
-            ['value' => "kn-IN", 'label' => __('Kannada')],
-            ['value' => "ml-IN", 'label' => __('Malayalam')],
+            ['value' => "en-IN", 'label' => __('English(India)')]
         ];
     }
 }

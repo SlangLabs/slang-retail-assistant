@@ -11,6 +11,6 @@ class SubdomainDropDown implements \Magento\Framework\Data\OptionSourceInterface
      */
     public function toOptionArray()
     {
-        return [['value' => "pharmacy", 'label' => __('pharmacy')], ['value' => "grocery", 'label' => __('grocery')]];
+        return [['value' => "pharmacy", 'label' => __('pharmacy')], ['value' => "grocery", 'label' => __('grocery')], ['value' => "custom", 'label' => __('custom')]];
     }
 }
